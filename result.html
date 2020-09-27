@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+            Result Page
+        </title>
+        
+        <style>
+            body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: cadetblue;
+    padding: 30px;
+}
+form{
+    margin: 200px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 200px;
+    margin: 10px auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+        </style>
+        
+        <script>
+            window.addEventListener('load', () => {
+
+// Via Query parameters - GET
+/* const params = (new URL(document.location)).searchParams;
+const name = params.get('name');
+const surname = params.get('surname'); */
+
+// Via local Storage
+/* const name = localStorage.getItem('NAME');
+const surname = localStorage.getItem('SURNAME'); */
+
+const name = sessionStorage.getItem('NAME');
+const surname = sessionStorage.getItem('SURNAME');
+const mobile = sessionStorage.getItem('MOBILE');
+
+document.getElementById('result-name').innerHTML = name;
+document.getElementById('result-surname').innerHTML = surname;
+document.getElementById('result-mobile').innerHTML = mobile;
+
+})
+        </script>
+
+        
+    </head>
+    <body>
+        <h1>
+            Result Page
+        </h1>
+
+
+        <table border="1" >
+            <tr style="color: crimson;">
+            <th>Surname</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+        </tr>
+        <tr>
+            <td> <span id="result-surname"></span></td>
+            <td> <span id="result-name"></span></td>
+            <td> <span id="result-mobile"></span></td>
+        </tr>
+        </table>
+        <h2>
+            Name: <span id="result-name" />
+        </h2>
+        <h2>
+            Surname: <span id="result-surname" />
+        </h2>
+
+        <h1>Mobile Number: <span id="result-mobile"></span></h1>
+
+    </body>
+</html>
